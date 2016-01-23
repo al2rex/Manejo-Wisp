@@ -40,8 +40,8 @@
 									<li><a href="../views/facturacion.php">Facturacion Total</a></li>
 									<li><a href="#">Facturacion Individual</a></li>
 									<li class="divider"></li>
-									<li><a href="facturas.php">Facturas</a></li>
-									<li><a href="#">Cobros</a></li>	
+									<li><a href="../views/facturas.php">Facturas</a></li>
+									<li><a href="../views/cobros.php">Cobros</a></li>	
 									<li><a href="#">Recibo Caja</a></li>
 									<li><a href="#">Estado Cuentas</a></li>	
 								</ul>
