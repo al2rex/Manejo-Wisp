@@ -1,67 +1,144 @@
-<header>
-			<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
-				<div class="container">
-					<div class="navbar-header"><!-- para que aparesca el boton en los moviles -->
-						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navegacion-fm">
-							<span class="sr-only">Desplegar / Ocultar Menu</span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-						</button>
-						<a href="#" class="navbar-brand">Manejo Wisp</a>
+<?php
+session_start();
+//print_r($_SESSION);
+ if (isset($_SESSION['ingreso']) && $_SESSION['ingreso']=='yes') 
+{
+
+?>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+   	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Manejo Wisp ..:: Cambio Contraseña ::..</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />	
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../resources/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../resources/css/estilos.css">
+
+</head>
+<body onload="listar_facturas('');">
+
+<?php include('header.php') ?>
+	
+
+
+<section class="main container">
+			<div class="row">
+				<section class="jumbotron ">
+					<div class="container">
+						<h1 class="texto-h1">Cambio Contraseña</h1>
+						<p class="texto-h1">Manejo Wisp</p>
 					</div>
-					<!-- Inicia Menu -->
-					<div class="collapse navbar-collapse" id="navegacion-fm">
-						<ul class="nav navbar-nav">
-							<li><a href="../views/home.php">Home</a></li>
-							<li><a href="../views/empresa.php">Empresa</a></li>
-							<li class="dropdown">
-								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">
-									Infraestructura  <span class="caret"></span>
-								</a>
-								<ul class="dropdown-menu" role="menu">
-									<li><a href="../views/clientes.php">Clientes</a></li>
-									<li class="divider"></li>
-									<li><a href="../views/equipos.php">Equipos</a></li>
-									<li><a href="../views/nodos.php">Nodos</a></li>
-									<li class="divider"></li>
-									<li><a href="#">Reportes</a></li>		
-								</ul>
-							</li>
-							<li><a href="../views/planes.php">Planes</a></li>
-							<li><a href="../views/usuarios.php">Usuarios</a></li>
-							<li class="dropdown">
-								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">
-									Gestión  <span class="caret"></span>
-								</a>
-								<ul class="dropdown-menu" role="menu">
-									<li class="dropdown-header">Facturación</li>
-									<li class="divider"></li>
-									<li><a href="../views/facturacion.php">Facturacion Total</a></li>
-									<li><a href="../views/facturaindividual.php">Facturacion Individual</a></li>
-									<li class="divider"></li>
-									<li><a href="../views/facturas.php">Facturas</a></li>
-									<li><a href="../views/cobros.php">Cobros</a></li>	
-									<li><a href="../views/recibocaja.php">Recibo Caja</a></li>
-									<li><a href="../views/estadocuenta.php">Estado Cuentas</a></li>	
-								</ul>
-						</ul>
-						
-						<div class="collapse navbar-collapse navbar-right" id="navegacion-fm">
-						<ul class="nav navbar-nav">
-							<li class="dropdown">
-								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">
-									Perfil  <span class="caret"></span>
-								</a>
-								<ul class="dropdown-menu" role="menu">
-									<li><a href="#">Cuenta</a></li>
-									<li><a href="#">Cambiar Contraseña</a></li>
-									<li class="divider"></li>
-									<li><a href="javascript:void(0);" onclick="cerrar();">Cerrar Sesion</a></li>	
-								</ul>
-							</li>
-						</ul>
-					</div>
-				</div>
-			</nav>
-		</header>
+				</section>
+				
+
+				<div class="col-xs-6">
+          <div class="form-group">
+              <label for="anterior">Contraseña Anterior:</label>
+              <div class="input-group">
+              <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+              <input type="nick" class="form-control" id="usuario" name="usuario" placeholder="Contraseña Anterior">
+              </div>
+           </div>
+           <div class="form-group">
+              <label for="nuevaclave">Nueva Contraseña:</label>
+              <div class="input-group">
+              <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+              <input type="nick" class="form-control" id="usuario" name="usuario" placeholder="Nuevo Password">
+              </div>
+           </div>
+          <div class="form-group">
+              <label for="respnuevaclave">REp Nueva Contraseña</label>
+              <div class="input-group">
+                <span class="input-group-addon"><span class="glyphicon glyphicon-star"></span></span>
+                <input type="password" class="form-control" id="password" placeholder="Rep.Nuevo Password">
+              </div>
+          </div>
+          <button type="button" class="btn btn-success" onclick='logueo();'><span class="glyphicon glyphicon-lock"></span> Cambiar Contraseña</button>      
+        </div>
+        <div class="col-xs-6">
+          <img src="../resources/img/logo.png">
+        </div>
+		</section>
+
+	
+
+	<!-- VENTANA MODAL PARA ACTUALIZAR -->
+
+	<div class="modal fade" id="actualizarnodos" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h3 class="modal-title text-center">Actualizar Nodos</h3>
+              </div>
+              <div class="modal-body">
+                <div class="alert alert-success text-center" id="exito_act" style="display:none;">
+                  <span class="glyphicon glyphicon-ok"> </span><span> Actualizacion Exitoso</span>
+                </div>
+                <div class="alert alert-danger text-center" id="campos_vacios_act" style="display:none;">
+                  <span class="glyphicon glyphicon-ok"> </span><span> Debes rellenar todos los campos</span>
+                </div>
+                <div class="alert alert-danger text-center" id="campos_error_act" style="display:none;">
+                  <span class="glyphicon glyphicon-ok"> </span><span> Error al ingresar los registros</span>
+                </div>
+                <form class="form-horizontal" id="formNodoAct">
+                  <div class="form-group">
+                    <label for="nombresnodo" class="control-label col-xs-5">Nombre Nodo :</label>
+                    <div class="col-xs-5">
+                      <input type="hidden" id="idNodo" name="idNodo" />
+                      <input id="nombre_nodo_act" name="nombre_nodo_act" disabled="disabled" type="text" class="form-control" placeholder="Ingrese nombre nodo">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="descripcion-nodo" class="control-label col-xs-5">Descripcion Nodo :</label>
+                    <div class="col-xs-5">
+                      <input id="descripcion_nodo_act" name="descripcion_nodo_act"  type="text" class="form-control" placeholder="Ingrese descripcion nodo">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="direccion-nodo" class="control-label col-xs-5">Direccion Nodo :</label>
+                    <div class="col-xs-5">
+                        <input id="direccion_nodo_act" name="direccion_nodo_act" type="text" class="form-control" placeholder="Ingrese direccion nodo">
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <div class="modal-footer">  
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                <button onclick="actualizar();" type="button" class="btn btn-success">Guardar</button>
+                <div id="cargar1" style="display:none;"><i class="fa fa-refresh fa-spin"></i> </span> </div>
+              </div>
+            </div><!-- /.modal-content -->
+          </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+    </div>
+	
+	
+	<?php include("footer.php"); ?>
+
+	<script src="../resources/js/jquery-1.11.2.js"></script>
+	<script src="../resources/js/bootstrap.min.js"></script>
+	<!--<script src="../resources/js/facturacion.js"></script>-->
+	<script type="text/javascript">
+	function cerrar(){
+		$.ajax({
+			url:'../controllers/usuariosControllers.php',
+			type:'POST',
+			data:'boton=cerrar',
+		}).done(function(resp){
+			location.href='../views/';
+		});
+	}
+
+	</script>
+</body>
+</html>
+<?php
+}else
+{
+	header("location: ./");
+}
+?>
