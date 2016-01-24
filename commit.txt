@@ -1,0 +1,11 @@
+commit 7c5f5a68cc57df9e49f3325708c0e017a1e226b5
+Author: RafCasf <arnaldo.castilla@hhotmail.com>
+Date:   Sat Jan 23 18:51:03 2016 -0500
+
+    Cramos el archivo cobros.php y se modifica el archivo header.php con el link del archivo cobros.php, quedamos a la esperar para seguir con el desarrollo de este archivo
+
+commit 2bfc0d5538a45256bde6f526cab2a110e83818c4
+Author: RafCasf <arnaldo.castilla@hhotmail.com>
+Date:   Sat Jan 23 18:00:33 2016 -0500
+
+    Iniciamos
