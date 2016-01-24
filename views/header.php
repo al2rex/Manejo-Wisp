@@ -38,7 +38,7 @@
 									<li class="dropdown-header">Facturación</li>
 									<li class="divider"></li>
 									<li><a href="../views/facturacion.php">Facturacion Total</a></li>
-									<li><a href="#">Facturacion Individual</a></li>
+									<li><a href="../views/facturaindividual.php">Facturacion Individual</a></li>
 									<li class="divider"></li>
 									<li><a href="../views/facturas.php">Facturas</a></li>
 									<li><a href="../views/cobros.php">Cobros</a></li>	
