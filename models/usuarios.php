@@ -85,9 +85,26 @@ class usuarios{
 		}
 		$this->conexion->cerrar();
 	}
+	function usuarios_x_id($cod){
+		$sql = " select * from usuarios where id_usuario = ?; ";
+		$stmt = $this->conexion->conexion->prepare($sql);
+
+		$stmt->execute( array( $cod ) );
+		$num = $stmt->rowCount();
+		if($num==0){
+			echo "No se encontro nningun usuario";
+		}else{
+			$r = array();
+			if($row = $stmt->fetch()){
+				$r[] = $row;
+			}
+			return $r;
+			$this->conexion->cerrar();
+		}
+	}
 }
 		/*$ins = new usuarios();
-		$r = $ins->registrar_usuario('arnald');
+		$r = $ins->usuarios_x_id('1');
 		print_r($r)*/
 		
 ?>

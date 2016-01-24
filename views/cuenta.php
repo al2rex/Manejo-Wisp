@@ -1,9 +1,10 @@
 <?php
-session_start();
+require_once("../models/usuarios.php");
 //print_r($_SESSION);
  if (isset($_SESSION['ingreso']) && $_SESSION['ingreso']=='yes') 
 {
-
+    $ins = new usuarios();
+    $r = $ins->usuarios_x_id($_SESSION["id_usuario"]);
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -39,42 +40,46 @@ session_start();
               <label for="nusuario">Nombre Usuario:</label>
               <div class="input-group">
               <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
-              <input type="text" class="form-control" id="nombreusuario" name="nombreusuario">
+              <input type="text" class="form-control" id="nombreusuario" name="nombreusuario" value="<?php echo $r[0]["nick"] ?>" disabled="disabled">
               </div>
            </div>
            <div class="form-group">
               <label for="nombrecompleto">Nombre Completo:</label>
               <div class="input-group">
               <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
-              <input type="text" class="form-control" id="ncompleto" name="ncompleto" >
+              <input type="text" class="form-control" id="ncompleto" name="ncompleto" value="<?php echo $r[0]["nombre"] ?>" disabled="disabled">
               </div>
            </div>
           <div class="form-group">
               <label for="dcorreo">Direccion Correo</label>
               <div class="input-group">
                 <span class="input-group-addon"><span class="glyphicon glyphicon-star"></span></span>
-                <input type="email" class="form-control" id="direccioncorreo" name="direccioncorreo">
+                <input type="email" class="form-control" id="direccioncorreo" name="direccioncorreo" value="<?php echo $r[0]["email"] ?>" disabled="disabled">
               </div>
           </div>
           <div class="form-group">
               <label for="permiso">Permiso:</label>
               <div class="input-group">
               <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
-              <input type="text" class="form-control" id="permisousuario" name="permisousuario">
+              <input type="text" class="form-control" id="permisousuario" name="permisousuario" value="<?php switch ($r[0]["roll"]) {
+                case '1':
+                  echo "Administrador";
+                  break;
+              }  ?>" disabled="disabled">
               </div>
            </div>
            <div class="form-group">
               <label for="estado">Estado:</label>
               <div class="input-group">
               <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
-              <input type="text" class="form-control" id="estadouser" name="estadouser">
+              <input type="text" class="form-control" id="estadouser" name="estadouser" value="<?php echo $r[0]["estado"] ?>" disabled="disabled">
               </div>
            </div>
           <div class="form-group">
               <label for="fregistro">Fecha Registro</label>
               <div class="input-group">
                 <span class="input-group-addon"><span class="glyphicon glyphicon-star"></span></span>
-                <input type="date" class="form-control" id="fecharegistro" name="fecharegistro" >
+                <input type="date" class="form-control" id="fecharegistro" name="fecharegistro" value="<?php echo $r[0]["fecha_registro"] ?>" disabled="disabled">
               </div>
           </div>
       
