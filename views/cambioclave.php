@@ -55,7 +55,7 @@
 								</a>
 								<ul class="dropdown-menu" role="menu">
 									<li><a href="#">Cuenta</a></li>
-									<li><a href="../views/cambioclave.php">Cambiar Contraseña</a></li>
+									<li><a href="#">Cambiar Contraseña</a></li>
 									<li class="divider"></li>
 									<li><a href="javascript:void(0);" onclick="cerrar();">Cerrar Sesion</a></li>	
 								</ul>
