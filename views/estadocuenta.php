@@ -28,7 +28,7 @@ session_start();
 			<div class="row">
 				<section class="jumbotron ">
 					<div class="container">
-						<h1 class="texto-h1">Recibo De Caja</h1>
+						<h1 class="texto-h1">Estado De Cuentas</h1>
 						<p class="texto-h1">Manejo Wisp</p>
 					</div>
 				</section>

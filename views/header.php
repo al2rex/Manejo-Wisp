@@ -43,7 +43,7 @@
 									<li><a href="../views/facturas.php">Facturas</a></li>
 									<li><a href="../views/cobros.php">Cobros</a></li>	
 									<li><a href="../views/recibocaja.php">Recibo Caja</a></li>
-									<li><a href="#">Estado Cuentas</a></li>	
+									<li><a href="../views/estadocuenta.php">Estado Cuentas</a></li>	
 								</ul>
 						</ul>
 						

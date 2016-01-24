@@ -1,3 +1,9 @@
+commit 972a4ef0a3367f594456721ca3959689a1e3639b
+Author: @RalfC91 <arnaldo.castilla@hhotmail.com>
+Date:   Sat Jan 23 19:49:39 2016 -0500
+
+    Se creo el archivo recibo caja y la adicion del link en el archivo header a la esperar del desarrollo de este archivo
+
 commit 7c5f5a68cc57df9e49f3325708c0e017a1e226b5
 Author: RafCasf <arnaldo.castilla@hhotmail.com>
 Date:   Sat Jan 23 18:51:03 2016 -0500
