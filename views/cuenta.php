@@ -36,27 +36,48 @@ session_start();
 
 				<div class="col-xs-6">
           <div class="form-group">
-              <label for="anterior">Contraseña Anterior:</label>
+              <label for="nusuario">Nombre Usuario:</label>
               <div class="input-group">
               <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
-              <input type="nick" class="form-control" id="usuario" name="usuario" placeholder="Contraseña Anterior">
+              <input type="nick" class="form-control" id="usuario" name="usuario">
               </div>
            </div>
            <div class="form-group">
-              <label for="nuevaclave">Nueva Contraseña:</label>
+              <label for="nombrecompleto">Nombre Completo:</label>
               <div class="input-group">
               <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
-              <input type="nick" class="form-control" id="usuario" name="usuario" placeholder="Nuevo Password">
+              <input type="nick" class="form-control" id="usuario" name="usuario" >
               </div>
            </div>
           <div class="form-group">
-              <label for="respnuevaclave">REp Nueva Contraseña</label>
+              <label for="dcorreo">Direccion Correo</label>
               <div class="input-group">
                 <span class="input-group-addon"><span class="glyphicon glyphicon-star"></span></span>
-                <input type="password" class="form-control" id="password" placeholder="Rep.Nuevo Password">
+                <input type="password" class="form-control" id="password">
               </div>
           </div>
-          <button type="button" class="btn btn-success" onclick='logueo();'><span class="glyphicon glyphicon-lock"></span> Cambiar Contraseña</button>      
+          <div class="form-group">
+              <label for="permiso">Permiso:</label>
+              <div class="input-group">
+              <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+              <input type="nick" class="form-control" id="usuario" name="usuario">
+              </div>
+           </div>
+           <div class="form-group">
+              <label for="estado">Estado:</label>
+              <div class="input-group">
+              <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+              <input type="nick" class="form-control" id="usuario" name="usuario">
+              </div>
+           </div>
+          <div class="form-group">
+              <label for="fregistro">Fecha Registro</label>
+              <div class="input-group">
+                <span class="input-group-addon"><span class="glyphicon glyphicon-star"></span></span>
+                <input type="password" class="form-control" id="password" >
+              </div>
+          </div>
+      
         </div>
         <div class="col-xs-6">
           <img src="../resources/img/logo.png">
@@ -65,6 +86,7 @@ session_start();
 
 	
 
+	
 	
 	
 	<?php include("footer.php"); ?>
