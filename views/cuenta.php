@@ -39,42 +39,42 @@ session_start();
               <label for="nusuario">Nombre Usuario:</label>
               <div class="input-group">
               <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
-              <input type="nick" class="form-control" id="usuario" name="usuario">
+              <input type="text" class="form-control" id="nombreusuario" name="nombreusuario">
               </div>
            </div>
            <div class="form-group">
               <label for="nombrecompleto">Nombre Completo:</label>
               <div class="input-group">
               <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
-              <input type="nick" class="form-control" id="usuario" name="usuario" >
+              <input type="text" class="form-control" id="ncompleto" name="ncompleto" >
               </div>
            </div>
           <div class="form-group">
               <label for="dcorreo">Direccion Correo</label>
               <div class="input-group">
                 <span class="input-group-addon"><span class="glyphicon glyphicon-star"></span></span>
-                <input type="password" class="form-control" id="password">
+                <input type="email" class="form-control" id="direccioncorreo" name="direccioncorreo">
               </div>
           </div>
           <div class="form-group">
               <label for="permiso">Permiso:</label>
               <div class="input-group">
               <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
-              <input type="nick" class="form-control" id="usuario" name="usuario">
+              <input type="text" class="form-control" id="permisousuario" name="permisousuario">
               </div>
            </div>
            <div class="form-group">
               <label for="estado">Estado:</label>
               <div class="input-group">
               <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
-              <input type="nick" class="form-control" id="usuario" name="usuario">
+              <input type="text" class="form-control" id="estadouser" name="estadouser">
               </div>
            </div>
           <div class="form-group">
               <label for="fregistro">Fecha Registro</label>
               <div class="input-group">
                 <span class="input-group-addon"><span class="glyphicon glyphicon-star"></span></span>
-                <input type="password" class="form-control" id="password" >
+                <input type="date" class="form-control" id="fecharegistro" name="fecharegistro" >
               </div>
           </div>
       
