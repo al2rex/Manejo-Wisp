@@ -10,7 +10,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vbguest.auto_update = false
   config.vbguest.auto_reboot = false
   config.ssh.pty = true;
-  config.vm.network "private_network", ip: "192.168.56.25"
+  config.vm.network "private_network", ip: "192.168.56.21"
   config.vm.provider "virtualbox" do |vb|
         # Display the VirtualBox GUI when booting the machine
         vb.gui = false
